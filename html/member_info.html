@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/javascript.js"></script>
+    <link rel="shortcut icon" href="../images/64X64.ico" type="image/x-icon">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--content-->
+        <div class="content">
+            <i class="back_arrow" onclick="window.location.href='./member.html'"></i>
+            <div class="title">個人資料</div>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <!--會員中心內頁滑軸-->
+        <div class="memberList">
+            <ul>
+                <li class="active">基本資料</li>
+                <li onclick="window.location.href='./member_platform.html'">平臺帳號密碼</li>
+            </ul>
+        </div>
+        <!--會員中心內頁基本情報-->
+        <div class="memberInfo">
+            <form>
+                <ul class="inputList">
+                    <li>
+                        <em></em>
+                        <p>真實姓名</p>
+                        <input class="userName" type="text" placeholder="請輸入真實姓名需持卡人姓名一致" value="user898">
+                    </li>
+                    <li>
+                        <em></em>
+                        <p>生日</p>
+                        <input type="date">
+                    </li>
+                    <li class="active">
+                        <em></em>
+                        <p>Email</p>
+                        <input type="text" placeholder="請填選Email" value="opp1211@gmail.com">
+                        <div class="btnBox">
+                            <button type="button" class="chBtn">變更</button>
+                        </div>
+                    </li>
+                    <li>
+                        <p>住所</p>
+                        <input type="text" placeholder="請填選地址">
+                        <div class="btnBox">
+                            <button type="button" class="chBtn">變更</button>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <em></em>
+                        <p>Line</p>
+                        <input type="text" placeholder="Line 與 WeChat 擇一填寫即可" value="999ddd">
+                        <div class="btnBox">
+                            <button type="button" class="chBtn">變更</button>
+                        </div>
+                    </li>
+                    <li>
+                        <em></em>
+                        <p>WeChat</p>
+                        <input type="text" placeholder="Line 與 WeChat 擇一填寫即可">
+                        <div class="btnBox">
+                            <button type="button" class="chBtn">變更</button>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <button class="saveBtn">保存資料</button>
+                    </li>
+                </ul>
+            </form>
+            <div class="info_1">
+                <ul>
+                    <li>
+                        <p>遊戲帳號</p>
+                        <p>user898</p>
+                    </li>
+                    <li>
+                        <p>邀請碼</p>
+                        <p>
+                            M54ea858
+                            <button class="copy">複製</button>
+                        </p>
+                    </li>
+                    <li>
+                        <p>推廣網址</p>
+                        <p>
+                            <input type="text" value="https://mbfe.op8899.net/#/register?code=M54ea858">
+                            <button class="copy">複製</button>
+                        </p>
+                    </li>
+                    <li class="forQR">
+                        <p>推廣網址QR code</p>
+                        <div class="qrCode"></div>
+                    </li>
+                </ul> 
+            </div>
+            <div class="info_2">
+                <ul>
+                    <li>
+                        <div class="security">
+                            帳戶安全等級:
+                            <span class="low">低</span>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="noCheck"></i>
+                            基本資料填寫
+                        </p>
+                        <p class="empty">未認證</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="check"></i>
+                            綁定手機號碼
+                        </p>
+                        <p>
+                            0987654325
+                            <button class="changePhoneBtn">變更</button>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="noCheck"></i>
+                            添加銀行卡
+                        </p>
+                        <p class="empty">未認證</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="noCheck"></i>
+                            填寫電子郵件
+                        </p>
+                        <p class="empty">未認證</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="check"></i>
+                            修改密碼 
+                        </p>
+                        <p>
+                            <button class="changePwdBtn">變更</button>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        <ul>
+            <li onclick="window.location.href='./index_inner.html'">
+                <i class="menu_ic"></i>
+                <p>首頁</p>
+            </li>
+            <li onclick="window.location.href='./event.html'">
+                <i class="event_ic"></i>
+                <p>優惠</p>
+            </li>
+            <li onclick="window.location.href='./wallet.html'">
+                <i class="wallet_ic"></i>
+                <p>存轉提</p>
+            </li>
+            <li onclick="window.location.href='./help_often_contact.html'">
+                <i class="service_ic"></i>
+                <p>客服</p>
+            </li>
+            <li class="active" onclick="window.location.href='./member.html'">
+                <i class="center_ic"></i>
+                <p>會員中心</p>
+            </li>
+        </ul>
+    </footer>
+    <!--彈窗-->
+    <div class="filter">
+        <!--更變手機-->
+        <div class="jumpWindow phoneWindow">
+            <div class="title">
+                <p>更變手機</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <p class="smallTitle">
+                    <span>原有號碼：</span>
+                    0987654325
+                </p>
+                <label>
+                    <input type="text" placeholder="新手機號碼">
+                    <button type="button" class="cellphoneCheck">取得驗證碼</button>
+                </label>
+                <label>
+                    <input type="text" placeholder="驗證碼">
+                </label>
+                <button class="checkBtn">確認</button>
+                <p class="remind">送出驗證碼後，請立即連繫在線客服</p>
+            </form>
+        </div>
+        <!--更變密碼-->
+        <div class="jumpWindow passwordWindow">
+            <div class="title">
+                修改密碼
+                <i class="close_ic"></i>
+            </div>
+            <div class="content">
+                <form>
+                    <input type="text" placeholder="舊登入密碼">
+                    <input type="text" placeholder="新登入密碼">
+                    <input type="text" placeholder="確認新密碼">
+                    <button type="button" class="close">確認</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

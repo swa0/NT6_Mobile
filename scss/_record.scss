@@ -1,0 +1,411 @@
+//投注紀錄
+.bettingWrap {
+    @include bgStyle_1;
+
+    .searchContent {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        margin: 10px 0;
+        padding: 14px;
+
+        .top {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+
+            .helf {
+                width: 50%;
+                height: auto;
+                
+                &:nth-of-type(2) {
+                    text-align: right;
+
+                    p {
+                        padding-left: 5%;
+                    }
+                }
+
+                p {
+                    width: 100%;
+                    color: $title_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    text-align: left;
+                    margin-bottom: 10px;
+                }
+    
+                button {
+                    width: 95%;
+                    height: 9vw;
+                    @include fakeSelect;
+                }
+            }
+
+            .full {
+                width: 100%;
+                height: auto;
+
+                p {
+                    color: $title_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin: 10px 0;
+                }
+
+                .inputBox {
+                    width: 100%;
+                    height: 10vw;
+                    border: solid 1px $mainBorder_2;
+                    border-radius: 30px;
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    input {
+                        width: auto;
+                        height: 100%;
+                        border: none;
+                        background: none;
+                        color: $mainWord_1;
+                        font-size: 3.4vw;
+                        font-weight: bold;
+                    }
+                }
+
+                .selectBox {
+                    width: 100%;
+                    height: auto;
+
+                    select {
+                        width: 100%;
+                        height: 10vw;
+                        @include mainSelect;
+                    }
+                }
+            }
+        }
+
+        .date {
+            width: 90%;
+            height: auto;
+            display: flex;
+            margin: 20px auto;
+
+            button {
+                width: 25%;
+                height: 10vw;
+                @include secondBtn;
+                border-right-width: 0;
+                border-radius: 0;
+                font-size: 4vw;
+
+                &:nth-of-type(1) {
+                    border-radius: 5px 0 0 5px;
+                }
+            
+                &:last-child {
+                    border-radius: 0 5px 5px 0;
+                    border-right-width: 1px;
+                }
+            }
+        }
+
+        .check {
+            width: 80%;
+            height: 10vw;
+            @include mainBtn;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .list {
+        width: 100%;
+        height: auto;
+        padding: 10px 14px;
+
+        .noData {
+            display: none;
+            width: 100%;
+            height: auto;
+            color: $time;
+            font-size: 3.7vw;
+            font-weight: bold;
+            text-align: center;
+            padding: 80px;
+
+            &.display {
+                display: block;
+            }
+        }
+
+        .recordBox {
+            display: none;
+            width: 100%;
+            height: auto;
+            background: $mainBG_1;
+            border-radius: 10px;
+            border: solid 1px $mainBorder_1;
+            overflow: hidden;
+            margin-bottom: 10px;
+
+            &.display {
+                display: block;
+            }
+
+            .title {
+                width: 100%;
+                height: 10vw;
+                border-bottom: solid 1px $mainBorder_1;
+                color: $title_1;
+                font-size: 4vw;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 14px;
+                
+                .date {
+                    font-size: 3vw;
+                    color: $time;
+                }
+
+                button {
+                    width: 20vw;
+                    height: 7vw;
+                    @include thirdBtn;
+                    font-size: 3vw;
+                    padding: 0;
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                padding: 5px 14px;
+
+                li {
+                    width: 100%;
+                    height: 8vw;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    p {
+                        font-size: 3.4vw;
+
+                        &.num {
+                            color: $money;
+                        }
+
+                        &.win {
+                            color: $remind;
+                        }
+
+                        &.lose {
+                            color: $remind_Sp;
+                        }
+
+                        &.link {
+                            color: $link;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .innerBox {
+                width: 100%;
+                height: 0;
+                max-height: 40vh;
+                background: $record_innerBG;
+                border-radius: 5px;
+                overflow-y: auto;
+                padding: 0;
+
+                &.active {
+                    height: auto;
+                    padding: 14px;
+                }
+
+                .recordBox {
+
+                    .title {
+                        background: $record_innerTitleBG;
+                        color: $record_innerTitleColor;
+
+                        .date {
+                            color: $record_innerTitleColor;
+                        }
+                    }
+                }
+            }
+
+            .openBtn {
+                width: 100%;
+                height: 10vw;
+                border-top: solid 1px $mainBorder_1;
+                color: $mainWord_1;
+                font-size: 3.7vw;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.active {
+
+                    i {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                i {
+                    width: 3vw;
+                    height: 3vw;
+                    transition: 0.3s all;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    //交易紀錄用
+    &.deal {
+        padding: 45px 0 0 0;
+
+        .searchContent {
+            margin: 0 0 10px 0;
+        }
+    }
+}
+
+//交易紀錄上選項
+.recordTop {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+
+    ul {
+        width: 100%;
+        height: auto;
+        background: $BG;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+
+        li {
+            width: 48%;
+            height: 40px;
+            @include pageStyle;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+}
+
+.waterBox {
+    width: 100%;
+    height: auto;
+    padding: 15px 14px;
+
+    .noData {
+        display: none;
+        width: 100%;
+        height: auto;
+        color: $time;
+        font-size: 3.4vw;
+        font-weight: bold;
+        text-align: center;
+        padding: 80px;
+
+        &.display {
+            display: block;
+        }
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        border: solid 1px $mainBorder_1;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        .title {
+            width: 100%;
+            height: 10vw;
+            border-bottom: solid 1px $mainBorder_1;
+            color: $title_1;
+            font-size: 4vw;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+            padding: 5px 14px;
+    
+            li {
+                width: 100%;
+                height: 8vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                p {
+                    color: $mainWord_1;
+                    font-size: 3.7vw;
+                    font-weight: bold;
+                }
+    
+                .remindBox {
+                    width: 100%;
+                    height: 8vw;
+                    background: $wordBox_secondBG;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 14px;
+
+                    p {
+                        font-size: 3vw;
+                    }
+                }
+
+                &.btnBox {
+                    height: auto;
+                    padding: 10px 0;
+
+                    button {
+                        width: 40vw;
+                        height: 8vw;
+
+                        &:first-child {
+                            @include secondBtn;
+                            font-size: 3.7vw;
+                        }
+
+                        &:last-child {
+                            @include mainBtn;
+                            font-size: 3.7vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

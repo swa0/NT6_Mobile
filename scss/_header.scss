@@ -1,0 +1,115 @@
+//header
+header {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    //content
+    .content {
+        width: 100%;
+        height: 45px;
+        background: $header_BG;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 14px;
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .title {
+            width: 70%;
+            height: auto;
+            color: $header_Color;
+            font-size: 5vw;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            @include textHidden;
+        }
+
+        .back_arrow {
+            width: 21px;
+            height: 21px;
+            transform: scaleX(-1);
+        }
+
+        .refresh_ic {
+            width: 21px;
+            height: 21px;
+        }
+
+        .detailBtn {
+            width: auto;
+            height: 28px;
+           @include secondBtn;
+
+            &.edit {
+                display: none;
+
+                &.display {
+                    display: block;
+                }
+            }
+        }
+
+        .editBtn {
+            width: 21px;
+            height: 21px;
+            display: none;
+
+            &.display {
+                display: block;
+            }
+        }
+
+        .mail_ic {
+            width: 24px;
+            height: 24px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background: $header_mailRemind;
+                border-radius: 50%;
+                right: -3px;
+                bottom: 0;
+            }
+        }
+
+        // .inviteBtn {
+        //     width: 20vw;
+        //     height: 8vw;
+        //     position: absolute;
+        //     right: calc(20vw + 30px);
+        // }
+
+        .lang {
+            width: 95px;
+            height: 32px;
+            @include lang;
+        }
+
+        &.helpPage {
+            display: none;
+
+            &.display {
+                display: flex;
+            }
+        }
+    }
+}

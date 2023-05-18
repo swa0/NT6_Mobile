@@ -1,0 +1,269 @@
+//我的錢包
+.walletWrap {
+    @include bgStyle_1;
+
+    //上半
+    .walletBox {
+        width: 100%;
+        height: auto;
+        margin: 17px 0;
+
+        //漸層
+        .content {
+            width: 92vw;
+            height: auto;
+            background: $mainBG_1;
+            border: solid 1px $mainBorder_1;
+            border-radius: 12px;
+            box-shadow: 0 5px 6px -2px $mainShadow_2;
+            margin: 0 auto 17px;
+
+            .amount {
+                width: 100%;
+                height: auto;
+                display: flex;
+                border-bottom: solid 1px $mainBorder_1;
+
+                .half {
+                    width: 50%;
+                    height: auto;
+                    padding: 12px 0 12px 15px;
+
+                    .title {
+                        color: $mainWord_1;
+                        font-size: 4vw;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        margin-bottom: 10px;
+                    }
+
+                    .money {
+                        width: 100%;
+                        height: auto;
+                        color: $money;
+                        font-size: 6vw;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+
+            .details {
+                width: 100%;
+                height: 10vw;
+                display: flex;
+                align-items: center;
+                padding: 0 14px;
+                
+                p {
+                    color: $mainWord_1;
+                    font-size: 3.7vw;
+                    font-weight: bold;
+
+                    span {
+                        color: $remind;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        //轉存提
+        ul {
+            width: 100%;
+            height: auto;
+            background: $mainBG_1;
+            display: flex;
+            justify-content: space-between;
+            padding: 5vw 16vw;
+
+            li {
+                width: auto;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                i {
+                    width: 11.5vw;
+                    height: 11.5vw;
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 3.7vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+
+    //錢包列
+    .walletList {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        margin-bottom: 17px;
+
+        .forPlatform {
+            width: 100%;
+            height: auto;
+            padding-bottom: 15px;
+
+            .title {
+                width: 100%;
+                height: auto;
+                color: $time;
+                font-size: 3vw;
+                font-weight: bold;
+                letter-spacing: 1px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 14px;
+
+                button {
+                    width: 20vw;
+                    height: 6vw;
+                    @include thirdBtn;
+                    font-size: 3vw;
+                    padding: 0;
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                max-height: 67vw;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 8px;
+                padding: 0 14px;
+                overflow: hidden;
+
+                &.active {
+                    max-height: none;
+                }
+
+                li {
+                    width: auto;
+                    height: auto;
+                    min-height: 16.5vw;
+                    border: solid 1px $mainBorder_2;
+                    border-radius: 5px;
+                    padding: 8px 0 0 10px;
+
+                    div {
+                        color: $mainWord_1;
+                        font-size: 3vw;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        display: flex;
+                        align-items: center;
+
+                        .smallInfo {
+                            width: 4.5vw;
+                            height: 4.5vw;
+                            position: relative;
+                            opacity: 0;
+                            pointer-events: none;
+                            margin-left: 5px;
+
+                            &.display {
+                                opacity: 1;
+                                pointer-events: visible;
+                            }
+
+                            .inner {
+                                @include smallTip;
+                                display: none;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                bottom: -6vw;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: $money;
+                        font-size: 4.5vw;
+                        font-weight: bold;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .openBtn {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+
+                &.active {
+
+                    div {
+
+                        .db_arrow {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                div {
+                    color: $mainWord_1;
+                    font-size: 3vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    display: flex;
+                    align-items: center;
+
+                    .db_arrow {
+                        width: 3vw;
+                        height: 3vw;
+                        margin-left: 10px;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    //下方按鈕
+    .options {
+        width: 92vw;
+        height: 13vw;
+        margin: 0 auto 17px;
+        @include longBtn;
+
+        &:active,&.active {
+
+            p {
+                color: $longBtn_ActiveColor;
+            }
+        }
+
+        p {
+            color: $longBtn_Color;
+            font-size: 3.7vw;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            .betting_ic,
+            .deal_ic {
+                width: 8vw;
+                height: 8vw;
+                margin-right: 4vw;
+            }
+        }
+
+        .arrow_ic {
+            width: 3vw;
+            height: 3vw;
+        }
+    }
+}
